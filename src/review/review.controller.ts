@@ -6,7 +6,10 @@ import {
   HttpException,
   HttpStatus,
   Param,
-  Post, UseGuards, UsePipes, ValidationPipe,
+  Post,
+  UseGuards,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { ReviewService } from './review.service';
@@ -31,7 +34,6 @@ export class ReviewController {
       throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
   }
-
 
   @Get('byProduct/:productId')
   getByProduct(@Param('productId') productId: string) {
